@@ -2,7 +2,7 @@
 
 <h3>Interface no celular:</h3>
 
-<img align="center" src="image_cel.png">
+<img align="center" src="prot_cel.png">
 
 <h3>Interface na web:</h3>
 
