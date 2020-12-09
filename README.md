@@ -6,4 +6,4 @@
 
 <h3>Interface na web:</h3>
 
-<img align="center" src="image_web.png">
+<img align="center" src="web.gif">
