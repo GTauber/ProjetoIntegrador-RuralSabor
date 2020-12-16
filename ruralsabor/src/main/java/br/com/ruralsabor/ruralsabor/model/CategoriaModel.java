@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "tb_Categoria")
+@Table(name = "tb_categoria")
 public class CategoriaModel {
 
 	@Id
@@ -18,15 +18,15 @@ public class CategoriaModel {
 	
 	@NotBlank
 	@Size(min = 3, max = 30)
-	private String Regiao;
+	private String regiao;
 	
 	@NotBlank
 	@Size(min = 5, max = 20)
-	private String Categoria;
+	private String categoria;
 	
 	@NotBlank
 	@Size(min = 5, max = 30)
-	private String Tipo_Produtor;
+	private String tipo_produtor;
 	
 
 	public long getId() {
@@ -37,28 +37,28 @@ public class CategoriaModel {
 		this.id = id;
 	}
 
-	public String getRegiao() {
-		return Regiao;
+	public String getregiao() {
+		return regiao;
 	}
 
-	public void setRegiao(String regiao) {
-		Regiao = regiao;
+	public void setregiao(String regiao) {
+		this.regiao = regiao;
 	}
 
-	public String getCategoria() {
-		return Categoria;
+	public String getcategoria() {
+		return categoria;
 	}
 
-	public void setCategoria(String categoria) {
-		Categoria = categoria;
+	public void setcategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
-	public String getTipo_Produtor() {
-		return Tipo_Produtor;
+	public String gettipo_produtor() {
+		return tipo_produtor;
 	}
 
-	public void setTipo_Produtor(String tipo_Produtor) {
-		Tipo_Produtor = tipo_Produtor;
+	public void settipo_produtor(String tipo_produtor) {
+		this.tipo_produtor = tipo_produtor;
 	}
 	
 	
