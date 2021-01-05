@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ruralsabor.ruralsabor.model.ProdutoModel;
+import br.com.ruralsabor.ruralsabor.model.Produto;
 import br.com.ruralsabor.ruralsabor.repository.ProdutoRepository;
 
 @RestController
@@ -27,27 +27,27 @@ public class ProdutoController {
 	private ProdutoRepository repository;
 
 	@GetMapping
-	public ResponseEntity<List<ProdutoModel>> getAll() {
+	public ResponseEntity<List<Produto>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<ProdutoModel> getById(@PathVariable long id) {
+	public ResponseEntity<Produto> getById(@PathVariable long id) {
 		return repository.findById(id).map(Ans -> ResponseEntity.ok(Ans)).orElse(ResponseEntity.badRequest().build());
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<ProdutoModel>> getByNome(@PathVariable String nome) {
+	public ResponseEntity<List<Produto>> getByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
 
 	@PostMapping
-	public ResponseEntity<ProdutoModel> post(@RequestBody ProdutoModel post) {
+	public ResponseEntity<Produto> post(@RequestBody Produto post) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
 	}
 
 	@PutMapping
-	public ResponseEntity<ProdutoModel> put(@RequestBody ProdutoModel post) {
+	public ResponseEntity<Produto> put(@RequestBody Produto post) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
 	}
 

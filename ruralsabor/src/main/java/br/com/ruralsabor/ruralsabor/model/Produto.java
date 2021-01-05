@@ -16,7 +16,7 @@ import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tb_produto")
-public class ProdutoModel {
+public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class ProdutoModel {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
-	private CategoriaModel categoria;
+	private Categoria categoria;
 
 	public long getId() {
 		return id;

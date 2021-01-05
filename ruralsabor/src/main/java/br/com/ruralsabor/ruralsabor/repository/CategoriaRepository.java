@@ -7,15 +7,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import br.com.ruralsabor.ruralsabor.model.CategoriaModel;
+import br.com.ruralsabor.ruralsabor.model.Categoria;
 
 @Repository
-public interface CategoriaRepository extends JpaRepository<CategoriaModel, Long>{
+public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
 	
 	@Query (value="select * from tb_categoria where Regiao = :regiao", nativeQuery=true)
-	public List<CategoriaModel> SearchByReg(@Param("regiao") String regiao);
+	public List<Categoria> SearchByReg(@Param("regiao") String regiao);
 	
-		// public List<CategoriaModel> findAllByRegContainingIgnoreCase (String regiao);
+		// public List<Categoria> findAllByRegContainingIgnoreCase (String regiao);
 	}
 
 

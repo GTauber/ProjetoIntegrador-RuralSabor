@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.ruralsabor.ruralsabor.model.ProdutoModel;
+import br.com.ruralsabor.ruralsabor.model.Produto;
 
 @Repository
-public interface ProdutoRepository extends JpaRepository<ProdutoModel, Long> {
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	
-	// public List<ProdutoModel> findAllById(Long id);
+	// public List<Produto> findAllById(Long id);
 
-	public List<ProdutoModel> findAllByNomeContainingIgnoreCase(String nome);
+	public List<Produto> findAllByNomeContainingIgnoreCase(String nome);
 }

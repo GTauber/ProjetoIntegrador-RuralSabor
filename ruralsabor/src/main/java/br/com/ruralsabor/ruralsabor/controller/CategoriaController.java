@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ruralsabor.ruralsabor.model.CategoriaModel;
+import br.com.ruralsabor.ruralsabor.model.Categoria;
 import br.com.ruralsabor.ruralsabor.repository.CategoriaRepository;
 
 @RestController
@@ -27,28 +27,28 @@ public class CategoriaController {
 	private CategoriaRepository Repository;
 
 	@GetMapping
-	public ResponseEntity<List<CategoriaModel>> getAll() {
+	public ResponseEntity<List<Categoria>> getAll() {
 		return ResponseEntity.ok(Repository.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<CategoriaModel> getById(@PathVariable long id) {
+	public ResponseEntity<Categoria> getById(@PathVariable long id) {
 		return Repository.findById(id).map(Ans -> ResponseEntity.ok(Ans)).orElse(ResponseEntity.badRequest().build());
 
 	}
 
 	@GetMapping("/regiao/{regiao}")
-	public ResponseEntity<List<CategoriaModel>> SearchByReg(@PathVariable String regiao) {
+	public ResponseEntity<List<Categoria>> SearchByReg(@PathVariable String regiao) {
 		return ResponseEntity.ok(Repository.SearchByReg(regiao));
 	}
 
 	@PostMapping
-	public ResponseEntity<CategoriaModel> post(@RequestBody CategoriaModel post) {
+	public ResponseEntity<Categoria> post(@RequestBody Categoria post) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(Repository.save(post));
 	}
 
 	@PutMapping
-	public ResponseEntity<CategoriaModel> put(@RequestBody CategoriaModel post) {
+	public ResponseEntity<Categoria> put(@RequestBody Categoria post) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(Repository.save(post));
 	}
 
