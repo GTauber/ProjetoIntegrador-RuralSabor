@@ -1,5 +1,6 @@
 package br.com.ruralsabor.ruralsabor.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,14 +24,16 @@ public class Usuario {
 
 	@NotNull
 	@Size(min = 3, max = 70)
+	@Column(unique = true)
 	private String email;
 
 	@NotNull
-	@Size(min = 8)
+	@Size(min = 8) //Corrigir (sistema encripitado permite entrada automatica)
 	private String senha;
 	
 	@NotNull
 	@Size(min= 3, max = 100)
+	@Column(unique = true)
 	private String usuario;
 
 	public long getId() {

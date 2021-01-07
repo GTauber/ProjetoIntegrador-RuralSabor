@@ -79,4 +79,13 @@ public class Produto {
 		this.disponibilidade = disponibilidade;
 	}
 
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
+
 }
