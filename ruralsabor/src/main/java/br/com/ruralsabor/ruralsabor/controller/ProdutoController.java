@@ -40,6 +40,11 @@ public class ProdutoController {
 	public ResponseEntity<List<Produto>> getByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
+	
+	@GetMapping("/regiao/{regiao}")
+	public ResponseEntity<List<Produto>> SearchByReg(@PathVariable String regiao) {
+		return ResponseEntity.ok(repository.SearchByReg(regiao));
+	}
 
 	@PostMapping
 	public ResponseEntity<Produto> post(@RequestBody Produto post) {

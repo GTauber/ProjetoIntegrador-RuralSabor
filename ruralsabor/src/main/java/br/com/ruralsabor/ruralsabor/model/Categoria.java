@@ -23,10 +23,6 @@ public class Categoria {
 	private long id;
 
 	@NotBlank
-	@Size(min = 3, max = 30)
-	private String regiao;
-
-	@NotBlank
 	@Size(min = 5, max = 20)
 	private String categoria;
 
@@ -44,14 +40,6 @@ public class Categoria {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getregiao() {
-		return regiao;
-	}
-
-	public void setregiao(String regiao) {
-		this.regiao = regiao;
 	}
 
 	public String getcategoria() {
