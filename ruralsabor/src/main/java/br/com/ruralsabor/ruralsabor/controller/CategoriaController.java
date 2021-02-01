@@ -37,11 +37,6 @@ public class CategoriaController {
 
 	}
 
-	@GetMapping("/regiao/{regiao}")
-	public ResponseEntity<List<Categoria>> SearchByReg(@PathVariable String regiao) {
-		return ResponseEntity.ok(Repository.SearchByReg(regiao));
-	}
-
 	@PostMapping
 	public ResponseEntity<Categoria> post(@RequestBody Categoria post) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(Repository.save(post));

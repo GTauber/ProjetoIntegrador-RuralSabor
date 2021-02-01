@@ -34,10 +34,17 @@ public class Produto {
 	private BigDecimal preco;
 
 	private boolean disponibilidade;
-	
+
+	@NotNull
+	private BigDecimal qtd;
+
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String regiao;
 
 	public long getId() {
 		return id;
@@ -79,6 +86,25 @@ public class Produto {
 		this.disponibilidade = disponibilidade;
 	}
 
+<<<<<<< HEAD
+=======
+	public BigDecimal getQtd() {
+		return qtd;
+	}
+
+	public void setQtd(BigDecimal qtd) {
+		this.qtd = qtd;
+	}
+
+	public String getRegiao() {
+		return regiao;
+	}
+
+	public void setRegiao(String regiao) {
+		this.regiao = regiao;
+	}
+
+>>>>>>> d56bd5c38ec72bf7b1798a7cd774a3dc5dcdb51a
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -86,6 +112,9 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> d56bd5c38ec72bf7b1798a7cd774a3dc5dcdb51a
 
 }
