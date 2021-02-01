@@ -2,6 +2,11 @@ package br.com.ruralsabor.ruralsabor.model;
 
 import java.math.BigDecimal;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> aebb0cb1c43fccc84504a40baf027ab41984453f
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,10 +42,22 @@ public class Produto {
 
 	@NotNull
 	private BigDecimal qtd;
+<<<<<<< HEAD
+=======
+	
+	private String foto;
+>>>>>>> aebb0cb1c43fccc84504a40baf027ab41984453f
 
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+<<<<<<< HEAD
+=======
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+>>>>>>> aebb0cb1c43fccc84504a40baf027ab41984453f
 
 	@NotBlank
 	@Size(min = 3, max = 30)
@@ -87,7 +104,10 @@ public class Produto {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> aebb0cb1c43fccc84504a40baf027ab41984453f
 	public BigDecimal getQtd() {
 		return qtd;
 	}
@@ -104,7 +124,10 @@ public class Produto {
 		this.regiao = regiao;
 	}
 
+<<<<<<< HEAD
 >>>>>>> d56bd5c38ec72bf7b1798a7cd774a3dc5dcdb51a
+=======
+>>>>>>> aebb0cb1c43fccc84504a40baf027ab41984453f
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -113,8 +136,27 @@ public class Produto {
 		this.categoria = categoria;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 >>>>>>> d56bd5c38ec72bf7b1798a7cd774a3dc5dcdb51a
 
+=======
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+>>>>>>> aebb0cb1c43fccc84504a40baf027ab41984453f
 }
