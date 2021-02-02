@@ -34,7 +34,11 @@ public class CategoriaController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Categoria> getById(@PathVariable long id) {
 		return Repository.findById(id).map(Ans -> ResponseEntity.ok(Ans)).orElse(ResponseEntity.badRequest().build());
-
+	}
+	
+	@GetMapping("/categoria/{categoria}")
+	public ResponseEntity<List<Categoria>> getByNome(@PathVariable String categoria) {
+		return ResponseEntity.ok(Repository.findAllByCategoriaContainingIgnoreCase(categoria));
 	}
 
 	@PostMapping

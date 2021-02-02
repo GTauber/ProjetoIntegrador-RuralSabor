@@ -16,6 +16,10 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 	public List<Produto> findAllByNomeContainingIgnoreCase(String nome);
 	
+	public List<Produto> findAllByRegiaoContainingIgnoreCase(String regiao);
+	
+	//public List<Produto> findAllByCategoriaContainingIgnoreCase(String categoria);
+	
 	@Query (value="select * from tb_produto where Regiao = :regiao", nativeQuery=true)
 	public List<Produto> SearchByReg(@Param("regiao") String regiao);
 }
